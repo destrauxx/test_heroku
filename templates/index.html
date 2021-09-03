@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id='cir1'></div>
+<div id='cir2'></div>
+<div id='cir3'></div>
+<div id='cir4'></div>
+<div id='cir5'></div>
+<div id='blur'></div>
+<div id="main">
+    <div id='main-wrapper'>
+        <div id='main-wrapper-herobox'>
+            <div id='main-wrapper-herobox-heading'>
+                <p id='main-wrapper-herobox-heading_markered'>Newseer</p>
+                <p id="main-wrapper-herobox-heading_text"> - новостной сервис</p>
+            </div>
+            <div id='main-wrapper-herobox_text'>
+                На Newseer вы можете читать новости бесплатно, также вы можете делать свои новости - для этого просто перейдите в раздел “Создание”.
+            </div>
+            <div id='main-wrapper-herobox-buttons'>
+                <div id='main-wrapper-herobox-buttons-wrapper-read'>
+                    <p id='main-wrapper-herobox-buttons-wrapper-read_text'>Начать читать</p>
+                    <svg id='main-wrapper-herobox-buttons-wrapper-read_icon' width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="40" height="40" fill="url(#pattern2)"/>
+                        <defs>
+                        <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image2" transform="scale(0.0208333)"/>
+                    </pattern>
+                        <image id="image2" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABHElEQVRoge2ZPQrCQBBGn79o5Qk8pIWWEgutLMRDeAwrTyEW3sHCqIHYRFmFuBudZCLMg4UUm/nmsfkhGzAMI4Q+MAMOQAKkJY0ky4iyTLHmdyU2nTd2QE9CYKbQ/GNMJQQOTsEx0JEomkMHmDh5e4mi7jXflSjooevkJb7JjYCCacH5EgRnNktupHRMQBsTABbAmeLP+DMwF8j34oa+0wBOAc3mjdMXmS/8ugIpsAbiL86Ns3N/wt4D2piANiagjQloYwLamIA2JqCNCWhjAtr8vUC74HzvR3bV1H0FLr4JdRa4AkuJQlVvrxciZAWOzvGIGkr4iND5vSS29aj1k+/T1uOTVoBAAmyAGzAEBlRz88fACthWkGUYf8sdN8PbLSwtWXUAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>                     
+                    <a href="read/" id='main-wrapper-herobox-buttons-wrapper-read_read'></a>
+                </div>
+                <p id='main-wrapper-herobox-buttons_p'>или</p>
+                <div id='main-wrapper-herobox-buttons-wrapper-create'>
+                    <p id='main-wrapper-herobox-buttons-wrapper-create_text'>Создать новость</p>
+                    <svg id='main-wrapper-herobox-buttons-wrapper-create_icon'  width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="40" height="40" fill="url(#pattern1)"/>
+                        <defs>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image1" transform="scale(0.0208333)"/>
+                    </pattern>
+                        <image id="image1" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACy0lEQVRoge2ZMWgTURjHfxiFllRBqEPV4qZIBAcHEYQ4OOpSlSCVgouOzlUQl44RHAUR61BoKTpYwWp3CzrYwUEtdNPBNGgVomgah5dA8t337t4lL3eH5A/fkvfe9/3/d9+9978LDDBAT8hloP4p4BjwG9hKl048nAY2gEYz6sADYChNUq44irnaDSWWybiIIeAdOvlWvASG0yIYhYcECX9WfsvknbhMkOgcsBd4q4xl6k4cJtj3H4DdzfFMi9D6vgYcF/MyK0Lr+6uWufuANWX+C2CXT1KzShHXeBSRe9Qi4qYv8jmg0iX5dSDvUEMT8dGXgGKX5BvAH6DkWOecWPvDl4ByDwJcRUxiHvT2dW98CVgXiSci5pcwpF1E7ABmgG2Cwic9cKcgktaAEYd1LiLywBOF+DZw2wd5gFsi+bMYay8SFPEXuAIcQD8DfgFTnrgDsCoKXIu53nYnvhIk/wU46YV1E/vp7M06MNZFHu1OyFgDDvVOuRPXRZHXPeQKE7EE7OmJqQVLotC0GB8HFjGmbQt4ChwJyVciSH4GsxN5xwjBfbnQNj4ObCqEqs0xG+T8vmFCFPokxhcVMq1YCMmbmABp3spi3PaO2wC+h+RNRMBOguatKOZUFTKt+BaSOxEB0rxV6PympO3t7TEfkjsRAdK8zbaNRZGvAAdDciciwGbebKdqFdP384SThwQE2MxbHIepIQ9cIAEBmnm7hG7KouzuKMaYLQA/CZLviwBp3laId+ULmBN7FeOdbM9KXwSMORSV5HOYXatM8NkJiwqdm4MXSPMmo9U2w8B54D7GAruS3gDuAWfx/MmkhecRBFYwBk96JFvUMa00TaeP6gs089ZN1IBXwA3MW1di0LY419jE7DRT9MnXu+BxCMFU+jkOcujvqDLeA3eAE+nQtOMMGevnuLhLxvo5LpYxB1GR9P+KHWCAAf5n/AN88S3Ixff7ZQAAAABJRU5ErkJggg=="/>
+                        </defs>
+                    </svg>
+                        
+                    <a href="news/create/" id='main-wrapper-herobox-buttons-wrapper-create_create'></a>
+                </div>
+            </div>
+        </div>
+        <div id='main-wrapper-illustration'>
+            <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="400" height="400" rx="10" fill="#FFCC29"/>
+                <circle cx="340" cy="340" r="30" fill="#206A5D"/>
+                <rect x="22" y="22" width="356" height="10" rx="5" fill="#81B214"/>
+                <rect x="22" y="44" width="220" height="10" rx="5" fill="#81B214"/>
+                <rect x="22" y="76" width="288" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="98" width="305" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="120" width="288" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="142" width="247" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="161" width="288" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="183" width="279" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="205" width="299" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="22" y="227" width="279" height="7" rx="3.5" fill="#F58634"/>
+                <rect x="320" y="320" width="40" height="40" fill="url(#pattern3)"/>
+                <defs>
+                <pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image3" transform="scale(0.00581395)"/>
+                </pattern>
+                <image id="image3" width="172" height="172" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAACsCAYAAADmMUfYAAAH70lEQVR4Ae3dX6hlUxzA8V9KyoP/SqR4oNDIRFPyYB5IIiVFeJCHmRciXkijGfKvkOJhPEwKUZgYUbwwacrD1BQ1SUmECCVT5EXRqrvrdlvrrL32b//WWnf/vqdOJ2efvfda3/W525l77twR4UYBClCAAhSgAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABClCAAhSgAAUoQAEKUIACFOi5wG0icnDi/YaeJ8bYllngSRH5b+L9vWUmYVY9F/hwItYBec9zY2wLK3CqiPygBLt9YU2YTscFArbhSjn18fWO58fQFlbgvhnABujcKFClwL6ZwF5ZZbScxH2BIzOBfdl9SQKYF7hoJqzhLcG/5qPlBO4LhA8Mpv5BK7bfNvdFCWBaQPOBQQzs86aj5eDuC3w88xX2mPuiBDArED4w+H1msOGqe7nZiDmw6wJzfGAQe1vwtOuqTN6swFwfGGxE+7PZiDmw6wKvGbwdGPBudV2WyZsU+MoQ7BMmI+agbgvM+YHBcFVd//iN27JM3KTA7YZX1wHupSYj56AuC4Rv8A+wrB4fd1mWSZsU+KwC2PAemRsF1AXCBwZ/VwAbrtyXqEfLAdwXuKYS1gD2NPe1CaAu8HAlsEfVI+UAFBCR/ZXA7qU2BbQFHqiENbwduEM7WPb3XeCuilgD2HN952b2mgI3rv0VlgCpxp1PujSr5Xzf8LdZf60EdfhiCD9Yw40CxQUuFBHLH3IZgG583Fk8UnZwX+B0ETlU+co6wA0/XMONAkUF3m+E9duiUfJiCojIK42whivs26wABUoKPNsQawAbvtfLjQKjCtT62HV4rxp7vGLUSHmR+wI7Gl9ZA97v3K8CAUYVuKUDrAFs+DkFbhRYWSD8foE/OwH7yMqRstF9gS0iEr6NFHsv2eK5q92vCAGSBc4WkcMdYf1eRI5LjpYNrgucICJz/yI37RX5XdcrwuRXFnijoyvrAH3XyhGz0W2BFzvEGtBe73ZFmHiywO5OsYZ/5+uk5KjZ4LLAvZ1iDVfXAy5XhEknC9T41ULDe9Epj48mR84GdwWuE5F/Or66BuD8i97uWMYnHH6Q5KfOsYbxnRUfPs96KnC+iHzZOdZwdQ0/KM7NeYHwJ+5PNwHWADZ854Jb5QJ7RMTiPnUa72wSrAGsRbfNdsyp6zx5v4MGQMIxp94sxhNwcZ+/gWadp/oQCyCaiViMB6zzYw1NNesMWK6i1f8vAti1r1quiDZXxLm7Ahaw1a+SGsSABSxgc29uw1eJ5qsstq/mK89iPLEx8px+3TXrnHOZ3G4BRDMRi/GAU48z1lCzzkmQuQ0WQDQTsRhPLDbP6RFr1jnnMrndAohmIhbjAaceZ6yhZp2TIHMbLIBoJmIxnlhsntMj1qxzzmVyuwUQzUQsxgNOPc5YQ806J0HmNlgA0UzEYjyx2DynR6xZ55zL5HYLIJqJWIwHnHqcsYaadU6CzG2wAKKZiMV4YrF5To9Ys845l8ntFkA0E7EYDzj1OGMNNeucBJnbYAFEMxGL8cRi85wesWadcy6T2y2AaCZiMR5w6nHGGmrWOQkyt8ECiGYiFuOJxeY5PWLNOudcJrdbANFMxGI84NTjjDXUrHMSZG6DBRDNRCzGE4vNc3rEmnXOuUxutwCimYjFeMCpxxlrqFnnJMjcBgsgmolYjCcWm+f0iDXrnHOZ3G4BRDMRi/GAU48z1lCzzkmQuQ0WQDQTsRhPLDbP6RFr1jnnMrndAohmIhbjAaceZ6zhU0lVhhssgADWBkgMTcvnzjB0mTw0YH3gmhv2q0lRxhsAC9gpmC8zdpk8PGABWwr2k6SmChsAC9hSsE1/TT5gAVsC9usKF9GVpwAsYEvA7lypqcJGwAJ2LNi/KnjMngKwgB0L9rGspgovACxgx4I9uYLH7CkAC9gxYPdlJVV6AWABOwbsxZU8Zk8DWMDmwH6UVVTxBYAFbA7stRU9Zk8FWMCuAns0K6jyCwAL2FVg767sMXs6wAI2BfZYVk+DFwAWsCmwuxp4zJ4SsIBNgT0xq6fBCwAL2BjYvQ0sjjolYAEbA3vBKD0NXgRYwG4E+0EDh6NPCVjAbgS7fbSeBi8ELGDXg/2igcGiUwIWsOvB3lmkp8GLAQvYAewfDfwVnxKwgB3APlSsp8EOgAXsAPb4Bv6KTwlYwAawLxXLabQDYAEbwJ7XyF/xaQEL2APFahruAFjAXtXQX/GpAesb7JFiMY13AKxvsLc29ld8esD6BftbsZYOdgCsX7APduCveAiA9Qu2GEsPOwDWJ9gXesA3ZQyA9Qn2nClYetgHsP7A7u8B3tQxANYf2G1TsfSwH2B9gT3cAzrNGADrC+zNGiw97AtYP2B/6QGcdgyA9QP2fi2WHvYHrB+wPXhTjwGwPsA+p5bSyQEA6wPsmZ14Uw8DsMsH+5ZaSUcHAOzywW7tyJt6KIBdNtjP1UI6OwBglw32ps68qYcD2OWC/VGto8MDAHa5YO/p0Jt6SIBdLlg1jh4PANhlgn2mR2xzjAmwywR7yhw4ejwGYJcH9s0eoc01JsAuD+yWuXD0eJw9IhLuu9ceh//WPk6dq/a8uf3HzjP1uvB87/ep7dmPAhSgAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABClCAAhSgAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKEABClCAAhSgAAUoQAEKtC3wPy+7fIGD28TEAAAAAElFTkSuQmCC"/>
+                </defs>
+                </svg>                
+        </div>
+    </div>
+</div>
+<div id="rating">
+    <div id="rating-wrapper">
+        <div id="rating-wrapper-background">
+            <svg id='rating-wrapper-background_background' width="100%" height="774" viewBox="0 0 1279 774" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1307 443H36.1021C2.10588 465.983 -20.9999 448.929 -21 628.967C-21.0001 773.897 368.674 786.467 504.494 766.716C672.05 742.35 809.929 671.069 984.201 646.075C1158.47 621.082 1272.01 704.251 1307 748.96V443Z" fill="white"/>
+            <path d="M-19.9625 432V0C78.1352 0 78.1352 65.5759 207.953 110.628C311.808 146.67 458.386 115.3 518.694 95.1101C572.54 81.4276 724.815 41.3078 895.225 65.5759C1102.61 95.1101 1241.41 25.6964 1307 0V432H-19.9625Z" fill="white"/>
+            <rect x="-19.9625" y="166" width="1326.96" height="396" fill="white"/>
+            </svg>  
+            <svg id='rating-wrapper-background_upperdecorate' width="169" height="161" viewBox="0 0 169 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_i)">
+            <circle cx="39" cy="25" r="25" fill="#81B214"/>
+            </g>
+            <g filter="url(#filter1_d)">
+            <circle cx="45" cy="96" r="25" fill="#F58634"/>
+            </g>
+            <g filter="url(#filter2_d)">
+            <circle cx="104" cy="50" r="25" fill="#206A5D"/>
+            </g>
+            <g filter="url(#filter3_i)">
+            <path d="M126.655 89.4941C127.569 86.7644 131.431 86.7644 132.345 89.4941L137.876 106.009C138.282 107.223 139.414 108.045 140.693 108.056L158.109 108.213C160.988 108.239 162.181 111.911 159.867 113.624L145.87 123.988C144.841 124.749 144.409 126.08 144.794 127.3L150.026 143.912C150.891 146.658 147.767 148.927 145.423 147.256L131.241 137.146C130.199 136.404 128.801 136.404 127.759 137.146L113.577 147.256C111.233 148.927 108.109 146.658 108.974 143.912L114.206 127.3C114.591 126.08 114.159 124.749 113.13 123.988L99.1326 113.624C96.8189 111.911 98.0121 108.239 100.891 108.213L118.307 108.056C119.586 108.045 120.718 107.223 121.124 106.009L126.655 89.4941Z" fill="#FFCC29"/>
+            </g>
+            <defs>
+            <filter id="filter0_i" x="14" y="0" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dx="10" dy="10"/>
+            <feGaussianBlur stdDeviation="15"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+            </filter>
+            <filter id="filter1_d" x="0" y="51" width="110" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dx="10" dy="10"/>
+            <feGaussianBlur stdDeviation="15"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+            <filter id="filter2_d" x="59" y="5" width="110" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dx="10" dy="10"/>
+            <feGaussianBlur stdDeviation="15"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+            <filter id="filter3_i" x="97.9121" y="87.4468" width="73.1757" height="70.3798" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dx="10" dy="10"/>
+            <feGaussianBlur stdDeviation="15"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+            </filter>
+            </defs>
+            </svg> 
+            <svg id='rating-wrapper-background_lowerdecorate' width="311" height="294" viewBox="0 0 311 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id='filter0_i' filter="url(#filter0_i)">
+                <circle cx="136" cy="214" r="50" fill="#81B214"/>
+                </g>
+                <g id='filter1_d' filter="url(#filter1_d)">
+                <circle cx="241" cy="229" r="25" fill="#F58634"/>
+                </g>
+                <g filter="url(#filter2_i)">
+                <circle cx="236" cy="114" r="75" fill="#206A5D"/>
+                </g>
+                <g filter="url(#filter3_d)">
+                <path d="M83.1553 22.4941C84.0695 19.7644 87.9305 19.7644 88.8447 22.4941L102.514 63.3083C102.92 64.5219 104.052 65.344 105.331 65.3555L148.372 65.7431C151.25 65.769 152.444 69.441 150.13 71.154L115.537 96.7662C114.509 97.5277 114.076 98.8579 114.461 100.079L127.393 141.132C128.257 143.878 125.134 146.148 122.79 144.476L87.7414 119.491C86.6993 118.749 85.3007 118.749 84.2586 119.491L49.2102 144.476C46.8661 146.148 43.7425 143.878 44.6074 141.132L57.5391 100.079C57.9236 98.8579 57.4914 97.5277 56.4628 96.7662L21.8701 71.154C19.5564 69.441 20.7496 65.769 23.6282 65.7431L66.6687 65.3555C67.9485 65.344 69.08 64.5219 69.4864 63.3083L83.1553 22.4941Z" fill="#FFCC29"/>
+                </g>
+                <defs>
+                <filter id="filter0_i" x="86" y="164" width="110" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="10" dy="10"/>
+                <feGaussianBlur stdDeviation="15"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                </filter>
+                <filter id="filter1_d" x="196" y="184" width="110" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset dx="10" dy="10"/>
+                <feGaussianBlur stdDeviation="15"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                <filter id="filter2_i" x="161" y="39" width="160" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="10" dy="10"/>
+                <feGaussianBlur stdDeviation="15"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                </filter>
+                <filter id="filter3_d" x="0.649658" y="0.446777" width="190.701" height="184.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                <feOffset dx="10" dy="10"/>
+                <feGaussianBlur stdDeviation="15"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                </defs>
+                </svg>
+                           
+        </div>        
+    </div>
+</div>
+{% endblock %}

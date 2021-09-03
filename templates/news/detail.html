@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    {{ block.super }} - {{ single_object.article }}
+{% endblock %} 
+
+{% block content %}
+<h5>Author: {{ single_object.author }}</h5>
+<h1>{{ single_object.article }}</h1>
+
+<h5>Likes: {{ single_object.get_likes }}</h5>
+<form action="/news/like/{{ single_object.pk }}/" method='post'>
+    {% csrf_token %}
+        {% if not liked %}
+            <input type="submit" value='Лайк'>
+        {% else %}
+            <input type="submit" value='Инвалид'>
+        {% endif %}
+
+</form>
+{% if single_object.image %}
+    <img src="{% static single_object.image.url %}" alt="{{single_object.article}}" height='400'>
+{% endif %}
+<h5>Commentaries</h5>
+{% for c in single_object.commentary.all %}
+    <p class="commentary_box">
+        {% if c.user.userinformation.profile_image.url %}
+                <img src="{% static c.user.userinformation.profile_image.url %}" alt="avatar" width='50'>
+            {% else %}
+                <img src="{% static 'media\profile_images\default_avatar.png' %}" alt="" width='50'>
+        {% endif %}
+        {{ c.date.time }}
+        {{ c.user }}
+        {{ c.text }}
+        <a href="edit_commentary/{{c.pk}}">Редактировать</a>
+        <a href="delete_commentary/{{c.pk}}">Удалить</a>
+    </p>
+{% endfor %}
+
+{% include 'news/detail_snippet.html' with single_object=single_object %}
+
+{% if perms.user.is_staff %}
+    <a href="/news/edit/{{ single_object.pk }}">едет</a>
+    <a href="/news/delete/{{ single_object.pk }}">удалит</a>
+{% endif %}
+<a href="/news/commentary/{{ single_object.pk }}">камент</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+workspace.code-workspace
+first_app/dev.py
+# Text backup files
+*.bak
+# Database
+*.sqlite3
+
+git config --global user.email "you@example.com"
+  git config --global user.name "Your Name

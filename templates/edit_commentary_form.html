@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit commentary
+{% endblock %}
+
+{% block content %}
+    <div class="forms_wrapper">
+        <h1>
+            <mark>Edit commentary</mark>    
+        </h1>
+        <h1>News title - {{ single_object.article }}</h1>
+        <h1>Commentary text - {{ commentary.text }}</h1>
+        {% include 'news/detail_snippet.html' with single_object=single_object %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <input type="submit" value='Изменить'>
+        </form>
+    </div>
+{% endblock %}
