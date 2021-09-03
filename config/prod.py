@@ -1,6 +1,6 @@
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://tranquil-tor-08902.herokuapp.com']
+ALLOWED_HOSTS = ['tranquil-tor-08902.herokuapp.com']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
